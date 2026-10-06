@@ -9,11 +9,9 @@ services:
       POSTGRES_DB: tasksdb
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
 
   api:
-    image: task-api:latest
+    image: samkasaju/task-app:latest
     container_name: task-api
     restart: unless-stopped
     environment:
