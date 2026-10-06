@@ -26,5 +26,11 @@ pipeline {
                 sh 'venv/bin/python -m pytest'
             }
         }
+
+	stage('Build Docker Image') {
+ 	   steps {
+        	sh 'docker build -t samkasaju/task-app:latest .'
+	    	}	
+	}
     }
 }
